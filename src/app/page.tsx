@@ -45,6 +45,7 @@ const teaTypes = [
     whatsappText:
       "नमस्कार, मला वेलची (ELAICHI) चहा पावडर ऑर्डर करायची आहे. कृपया किंमत आणि उपलब्धता सांगा.",
     schemes: [],
+    hidden: true,
   },
   {
     name: "मसाला (MASALA)",
@@ -55,6 +56,7 @@ const teaTypes = [
     whatsappText:
       "नमस्कार, मला मसाला (MASALA) चहा पावडर ऑर्डर करायची आहे. कृपया किंमत आणि उपलब्धता सांगा.",
     schemes: [],
+    hidden: true,
   },
 ];
 
@@ -185,7 +187,7 @@ export default function Home() {
       <section id="products" className="bg-white px-4 py-16 sm:py-20">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {teaTypes.map((tea) => (
+            {teaTypes.filter((tea) => !tea.hidden).map((tea) => (
               <div
                 key={tea.name}
                 className="rounded-2xl overflow-hidden shadow-md border border-tea-light/20"
